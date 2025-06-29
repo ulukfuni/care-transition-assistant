@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import OpenAI from "openai";
 import { DischargeSummary } from "@/types";
+import { mockInsightsResponse } from "@/utils/mockData";
+import { GeminiClient } from "@/utils/geminiClient";
 
 // Import the transformed data from the discharges API
 async function getPatientData(): Promise<DischargeSummary[]> {
@@ -16,8 +18,12 @@ async function getPatientData(): Promise<DischargeSummary[]> {
 }
 
 export async function POST(request: NextRequest) {
+  let message = "";
+  let relevantPatients: DischargeSummary[] = [];
+  
   try {
-    const { message, patientIds } = await request.json();
+    const { message: requestMessage, patientIds } = await request.json();
+    message = requestMessage;
 
     if (!process.env.OPENAI_API_KEY) {
       return NextResponse.json(
@@ -37,7 +43,7 @@ export async function POST(request: NextRequest) {
 
     // Get relevant patient data
     const allPatients = await getPatientData();
-    let relevantPatients = allPatients;
+    relevantPatients = allPatients;
     if (patientIds && patientIds.length > 0) {
       relevantPatients = allPatients.filter((patient) =>
         patientIds.includes(patient.id)
@@ -86,7 +92,7 @@ Please analyze the provided patient data and generate actionable insights. Struc
 }`;
 
     const completion = await openai.chat.completions.create({
-      model: "gpt-4o-mini",
+      model: "gpt-3.5-turbo",
       messages: [
         { role: "system", content: systemPrompt },
         { role: "user", content: userPrompt },
@@ -133,7 +139,43 @@ Please analyze the provided patient data and generate actionable insights. Struc
   } catch (error) {
     console.error("Error in chat API:", error);
 
-    // Provide more specific error messages
+    // Check if it's a quota/API error and try Gemini as fallback
+    if (error instanceof Error && (
+      error.message.includes("quota") || 
+      error.message.includes("429") || 
+      error.message.includes("insufficient_quota") ||
+      error.message.includes("rate limit")
+    )) {
+      console.log("OpenAI API quota exceeded - trying Gemini as fallback");
+      
+      try {
+        // Try Gemini API
+        const geminiClient = new GeminiClient();
+        const geminiResponse = await geminiClient.generateInsights(message, relevantPatients);
+        
+        return NextResponse.json({
+          success: true,
+          data: geminiResponse,
+          usage: { prompt_tokens: 0, completion_tokens: 0, total_tokens: 0 },
+          timestamp: new Date().toISOString(),
+          note: "Response generated using Gemini API due to OpenAI quota limits"
+        });
+      } catch (geminiError) {
+        console.error("Gemini API also failed:", geminiError);
+        console.log("Falling back to mock data");
+        
+        // Fall back to mock data if Gemini also fails
+        return NextResponse.json({
+          success: true,
+          data: mockInsightsResponse,
+          usage: { prompt_tokens: 0, completion_tokens: 0, total_tokens: 0 },
+          timestamp: new Date().toISOString(),
+          note: "Mock data returned due to API quota limits"
+        });
+      }
+    }
+
+    // Provide more specific error messages for other errors
     let errorMessage = "Failed to process chat request";
     if (error instanceof Error) {
       if (error.message.includes("API key")) {
