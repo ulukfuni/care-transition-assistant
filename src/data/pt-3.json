@@ -1,0 +1,579 @@
+{
+    "disclaimers": {},
+    "case_summary": {
+        "disposition": "Discharged home with follow-up in the morning with labs",
+        "demographics": "80-year-old male with history of hypertension, BPH, and Crohn's disease",
+        "presentation": "presented to Bethesda Hospital West with lower abdominal pain, nausea, and constipation after symptoms persisted despite prior ER visit",
+        "exam_findings": "Notable for elevated WBC and possible pneumonia",
+        "interventions": "Treated with IV antibiotics, fluids, and supportive care",
+        "key_diagnostics": "CXR showed left basilar consolidation consistent with pneumonia",
+        "composite_summary": "80-year-old male with history of hypertension, BPH, and Crohn's disease presented to Bethesda Hospital West with lower abdominal pain, nausea, and constipation after symptoms persisted despite prior ER visit. Notable for elevated WBC and possible pneumonia. CXR showed left basilar consolidation consistent with pneumonia. Diagnosed with acute hypoxic respiratory failure, acute sepsis, and abdominal pain. Treated with IV antibiotics, fluids, and supportive care. Discharged home with follow-up in the morning with labs.",
+        "primary_diagnoses": "Diagnosed with acute hypoxic respiratory failure, acute sepsis, and abdominal pain"
+    },
+    "lab_tests": [
+        {
+            "note": "WBC elevated with left shift",
+            "status": "completed",
+            "test_name": "WBC",
+            "page_number": "3",
+            "source_text": "Lab Results (Most Recent 36 hrs)WBC: 12.21 K/uL High (01/11/25 18:32:00)",
+            "facility_name": "Bethesda Hospital West",
+            "date_completed": "2025-01-11",
+            "validation_notes": "",
+            "validation_status": "approved"
+        },
+        {
+            "note": "",
+            "status": "completed",
+            "test_name": "Hemoglobin",
+            "page_number": "3",
+            "source_text": "Hemoglobin: 14.3 g/dL (01/11/25 18:32:00)",
+            "facility_name": "Bethesda Hospital West",
+            "date_completed": "2025-01-11",
+            "validation_notes": "",
+            "validation_status": "approved"
+        },
+        {
+            "note": "",
+            "status": "completed",
+            "test_name": "Hematocrit",
+            "page_number": "3",
+            "source_text": "Hematocrit: 43.7 % (01/11/25 18:32:00)",
+            "facility_name": "Bethesda Hospital West",
+            "date_completed": "2025-01-11",
+            "validation_notes": "",
+            "validation_status": "approved"
+        },
+        {
+            "note": "",
+            "status": "completed",
+            "test_name": "Platelet Count",
+            "page_number": "3",
+            "source_text": "Platelet Count: 248 K/uL (01/11/25 18:32:00)",
+            "facility_name": "Bethesda Hospital West",
+            "date_completed": "2025-01-11",
+            "validation_notes": "",
+            "validation_status": "approved"
+        },
+        {
+            "note": "Sodium low",
+            "status": "completed",
+            "test_name": "Sodium on Blood",
+            "page_number": "3",
+            "source_text": "Sodium on Blood: 135 mmol/L Low (01/11/25 18:32:00)",
+            "facility_name": "Bethesda Hospital West",
+            "date_completed": "2025-01-11",
+            "validation_notes": "",
+            "validation_status": "approved"
+        },
+        {
+            "note": "",
+            "status": "completed",
+            "test_name": "Potassium on Blood",
+            "page_number": "3",
+            "source_text": "Potassium on Blood: 3.9 mmol/L (01/11/25 18:32:00)",
+            "facility_name": "Bethesda Hospital West",
+            "date_completed": "2025-01-11",
+            "validation_notes": "",
+            "validation_status": "approved"
+        },
+        {
+            "note": "",
+            "status": "completed",
+            "test_name": "Chloride on Blood",
+            "page_number": "3",
+            "source_text": "Chloride on Blood: 101 mmol/L (01/11/25 18:32:00)",
+            "facility_name": "Bethesda Hospital West",
+            "date_completed": "2025-01-11",
+            "validation_notes": "",
+            "validation_status": "approved"
+        },
+        {
+            "note": "",
+            "status": "completed",
+            "test_name": "CO2 on Blood",
+            "page_number": "3",
+            "source_text": "CO2 on Blood: 26 mmol/L (01/11/25 18:32:00)",
+            "facility_name": "Bethesda Hospital West",
+            "date_completed": "2025-01-11",
+            "validation_notes": "",
+            "validation_status": "approved"
+        },
+        {
+            "note": "",
+            "status": "completed",
+            "test_name": "Anion Gap",
+            "page_number": "3",
+            "source_text": "Anion Gap: 8 mmol/L (01/11/25 18:32:00)",
+            "facility_name": "Bethesda Hospital West",
+            "date_completed": "2025-01-11",
+            "validation_notes": "",
+            "validation_status": "approved"
+        },
+        {
+            "note": "Glucose elevated",
+            "status": "completed",
+            "test_name": "Glucose on Blood",
+            "page_number": "3",
+            "source_text": "Glucose on Blood: 104 mg/dL High (01/11/25 18:32:00)",
+            "facility_name": "Bethesda Hospital West",
+            "date_completed": "2025-01-11",
+            "validation_notes": "",
+            "validation_status": "approved"
+        },
+        {
+            "note": "",
+            "status": "completed",
+            "test_name": "Creatinine on Blood",
+            "page_number": "3",
+            "source_text": "Creatinine on Blood: 1.03 mg/dL (01/11/25 18:32:00)",
+            "facility_name": "Bethesda Hospital West",
+            "date_completed": "2025-01-11",
+            "validation_notes": "",
+            "validation_status": "approved"
+        },
+        {
+            "note": "",
+            "status": "completed",
+            "test_name": "BUN on Blood",
+            "page_number": "3",
+            "source_text": "BUN on Blood: 26 mg/dL (01/11/25 18:32:00)",
+            "facility_name": "Bethesda Hospital West",
+            "date_completed": "2025-01-11",
+            "validation_notes": "",
+            "validation_status": "approved"
+        },
+        {
+            "note": "",
+            "status": "completed",
+            "test_name": "Calcium (Total)",
+            "page_number": "3",
+            "source_text": "Calcium (Total): 9 mg/dL (01/11/25 18:32:00)",
+            "facility_name": "Bethesda Hospital West",
+            "date_completed": "2025-01-11",
+            "validation_notes": "",
+            "validation_status": "approved"
+        },
+        {
+            "note": "",
+            "status": "completed",
+            "test_name": "Total Protein on Blood",
+            "page_number": "3",
+            "source_text": "Total Protein on Blood: 6.8 g/dL (01/11/25 18:32:00)",
+            "facility_name": "Bethesda Hospital West",
+            "date_completed": "2025-01-11",
+            "validation_notes": "",
+            "validation_status": "approved"
+        },
+        {
+            "note": "",
+            "status": "completed",
+            "test_name": "Albumin on Blood",
+            "page_number": "3",
+            "source_text": "Albumin on Blood: 3.4 g/dL (01/11/25 18:32:00)",
+            "facility_name": "Bethesda Hospital West",
+            "date_completed": "2025-01-11",
+            "validation_notes": "",
+            "validation_status": "approved"
+        },
+        {
+            "note": "",
+            "status": "completed",
+            "test_name": "Globulin",
+            "page_number": "3",
+            "source_text": "Globulin: 3.4 g/dL (01/11/25 18:32:00)",
+            "facility_name": "Bethesda Hospital West",
+            "date_completed": "2025-01-11",
+            "validation_notes": "",
+            "validation_status": "approved"
+        },
+        {
+            "note": "",
+            "status": "completed",
+            "test_name": "ALT (SGPT) on Blood",
+            "page_number": "3",
+            "source_text": "ALT (SGPT) on Blood: 17 U/L (01/11/25 18:32:00)",
+            "facility_name": "Bethesda Hospital West",
+            "date_completed": "2025-01-11",
+            "validation_notes": "",
+            "validation_status": "approved"
+        },
+        {
+            "note": "",
+            "status": "completed",
+            "test_name": "AST (SGOT) on Blood",
+            "page_number": "3",
+            "source_text": "AST (SGOT) on Blood: 18 U/L (01/11/25 18:32:00)",
+            "facility_name": "Bethesda Hospital West",
+            "date_completed": "2025-01-11",
+            "validation_notes": "",
+            "validation_status": "approved"
+        },
+        {
+            "note": "",
+            "status": "completed",
+            "test_name": "AST/ALT Ratio",
+            "page_number": "3",
+            "source_text": "AST/ALT Ratio: 1.1 ratio (01/11/25 18:32:00)",
+            "facility_name": "Bethesda Hospital West",
+            "date_completed": "2025-01-11",
+            "validation_notes": "",
+            "validation_status": "approved"
+        },
+        {
+            "note": "",
+            "status": "completed",
+            "test_name": "Alkaline Phosphatase on Blood",
+            "page_number": "3",
+            "source_text": "Alkaline Phosphatase on Blood: 73 U/L (01/11/25 18:32:00)",
+            "facility_name": "Bethesda Hospital West",
+            "date_completed": "2025-01-11",
+            "validation_notes": "",
+            "validation_status": "approved"
+        },
+        {
+            "note": "",
+            "status": "completed",
+            "test_name": "Total Bilirubin on Blood",
+            "page_number": "3",
+            "source_text": "Total Bilirubin on Blood: 1.1 mg/dL (01/11/25 18:32:00)",
+            "facility_name": "Bethesda Hospital West",
+            "date_completed": "2025-01-11",
+            "validation_notes": "",
+            "validation_status": "approved"
+        },
+        {
+            "note": "",
+            "status": "completed",
+            "test_name": "Bilirubin (Direct)",
+            "page_number": "3",
+            "source_text": "Bilirubin (Direct): 0.1 mg/dL (01/11/25 18:32:00)",
+            "facility_name": "Bethesda Hospital West",
+            "date_completed": "2025-01-11",
+            "validation_notes": "",
+            "validation_status": "approved"
+        },
+        {
+            "note": "",
+            "status": "completed",
+            "test_name": "Bilirubin, Indirect",
+            "page_number": "4",
+            "source_text": "Bilirubin, Indirect: 1 mg/dL (01/11/25 18:32:00)",
+            "facility_name": "Bethesda Hospital West",
+            "date_completed": "2025-01-11",
+            "validation_notes": "",
+            "validation_status": "approved"
+        },
+        {
+            "note": "",
+            "status": "completed",
+            "test_name": "Lactic Acid (Lactate)",
+            "page_number": "4",
+            "source_text": "Lactic Acid (Lactate): 1 mmol/L (01/11/25 18:32:00)",
+            "facility_name": "Bethesda Hospital West",
+            "date_completed": "2025-01-11",
+            "validation_notes": "",
+            "validation_status": "approved"
+        }
+    ],
+    "follow_ups": [
+        {
+            "date": "",
+            "timeframe": "",
+            "page_number": "1",
+            "source_text": "",
+            "follow_up_item": "Follow up with PCP",
+            "additional_info": ""
+        }
+    ],
+    "patient": {
+        "age": 80,
+        "sex": "male",
+        "ssn": "",
+        "last_name": "Hirth",
+        "first_name": "Jonathan",
+        "middle_name": "",
+        "date_of_birth": "1944-03-07"
+    },
+    "encounter": {
+        "mrn": "300301149",
+        "notes": "Patient was admitted for further medical evaluation and management due to persistent lower abdominal pain, nausea, and vomiting. Initial workup showed elevated WBC and possible pneumonia. Treatment included IV antibiotics, fluids, and supportive care. Discharged with medications and follow-up instructions.",
+        "discharged_to": "Home / Self-Care",
+        "facility_name": "Bethesda Hospital West",
+        "provider_name": "Amador, Elias Noel MD",
+        "admission_date": "2025-01-11",
+        "discharge_date": "2025-01-13",
+        "encounter_type": "inpatient",
+        "reason_for_visit": "Lower abdominal pain, nausea, and constipation",
+        "discharge_summary": "Patient was discharged home with a diagnosis of acute hypoxic respiratory failure, acute sepsis, and abdominal pain. Discharge medications included amLODIPine, amoxicillin-clavulanate, Avodart, budesonide, dutasteride-tamsulosin, Flomax, lacosamide, MiraLax, ondansetron, and predniSONE."
+    },
+    "lace_score": {
+        "risk_level": "high",
+        "explanation": "The LACE score was calculated based on the following factors: Length of Stay (L): 3, Acute Admission (A): 3, Comorbidities (C): 5, Emergency Visits (E): 1.",
+        "total_score": 12,
+        "admission_type": "emergency",
+        "ed_visits_count": 1,
+        "acuity_lace_score": 3,
+        "length_of_stay_days": 3,
+        "ed_visits_lace_score": 1,
+        "length_of_stay_lace_score": 3,
+        "charlson_comorbidity_index": {
+            "age": {
+                "value": 80,
+                "page_number": 3,
+                "source_text": "80-year-old male with a medical history of hypertension, BPH, Crohn's disease on prednisone follows with GI Dr. Hirth."
+            },
+            "comorbidities": [
+                {
+                    "status": "confirmed",
+                    "cci_mapping": null,
+                    "description": "Hypertension",
+                    "page_number": 3,
+                    "source_text": "80-year-old male with a medical history of hypertension, BPH, Crohn's disease on prednisone follows with GI Dr. Hirth.",
+                    "cci_mapping_explanation": "Hypertension is a common condition but not specifically listed under the Charlson Comorbidity Index conditions."
+                },
+                {
+                    "status": "confirmed",
+                    "cci_mapping": null,
+                    "description": "BPH",
+                    "page_number": 3,
+                    "source_text": "80-year-old male with a medical history of hypertension, BPH, Crohn's disease on prednisone follows with GI Dr. Hirth.",
+                    "cci_mapping_explanation": "Benign prostatic hyperplasia (BPH) is not directly related to any Charlson Comorbidity Index condition."
+                },
+                {
+                    "status": "confirmed",
+                    "cci_mapping": null,
+                    "description": "Crohn's disease on prednisone",
+                    "page_number": 3,
+                    "source_text": "80-year-old male with a medical history of hypertension, BPH, Crohn's disease on prednisone follows with GI Dr. Hirth.",
+                    "cci_mapping_explanation": "Crohn's disease is an inflammatory bowel disease and could be considered under rheumatologic category but not directly included in the Charlson Comorbidity Index."
+                },
+                {
+                    "status": "suspected",
+                    "cci_mapping": null,
+                    "description": "Pneumonia: likely CAP",
+                    "page_number": 4,
+                    "source_text": "Pneumonia: likely CAP",
+                    "cci_mapping_explanation": "Pneumonia is an acute condition and not typically included in the Charlson Comorbidity Index."
+                },
+                {
+                    "status": "confirmed",
+                    "cci_mapping": null,
+                    "description": "Acute hypoxic respiratory failure",
+                    "page_number": 2,
+                    "source_text": "Acute hypoxic respiratory failure(J96.01: Acute respiratory failure with hypoxia)",
+                    "cci_mapping_explanation": "Acute respiratory failure is not directly applicable to the conditions listed in the Charlson Comorbidity Index."
+                },
+                {
+                    "status": "confirmed",
+                    "cci_mapping": null,
+                    "description": "Acute sepsis",
+                    "page_number": 2,
+                    "source_text": "Acute sepsis(A41.9: Sepsis, unspecified organism)",
+                    "cci_mapping_explanation": "Sepsis is an acute condition and not directly listed under the Charlson Comorbidity Index."
+                }
+            ]
+        },
+        "charlson_comorbidity_index_score": 4,
+        "charlson_comorbidity_index_lace_score": 5
+    },
+    "discharge_diagnoses": [
+        {
+            "note": "",
+            "description": "Acute respiratory failure with hypoxia",
+            "icd_10_code": "J96.01",
+            "page_number": "2",
+            "source_text": "Acute hypoxic respiratory failure(J96.01: Acute respiratory failure with hypoxia)",
+            "validation_notes": "The diagnosis and code are accurate as per the source text.",
+            "validation_status": "approved"
+        },
+        {
+            "note": "",
+            "description": "Sepsis, unspecified organism",
+            "icd_10_code": "A41.9",
+            "page_number": "2",
+            "source_text": "Acute sepsis(A41.9: Sepsis, unspecified organism)",
+            "validation_notes": "The diagnosis and code are accurate as per the source text.",
+            "validation_status": "approved"
+        },
+        {
+            "note": "",
+            "description": "Unspecified abdominal pain",
+            "icd_10_code": "R10.9",
+            "page_number": "2",
+            "source_text": "AP (abdominal pain)(R10.9: Unspecified abdominal pain)",
+            "validation_notes": "The diagnosis and code are accurate as per the source text.",
+            "validation_status": "approved"
+        },
+        {
+            "note": "",
+            "description": "Elevated white blood cell count, unspecified",
+            "icd_10_code": "D72.829",
+            "page_number": "2",
+            "source_text": "Leukocytosis(D72.829: Elevated white blood cell count, unspecified)",
+            "validation_notes": "The diagnosis and code are accurate as per the source text.",
+            "validation_status": "approved"
+        },
+        {
+            "note": "",
+            "description": "Nausea",
+            "icd_10_code": "R11.0",
+            "page_number": "2",
+            "source_text": "Nausea(R11.0: Nausea)",
+            "validation_notes": "The diagnosis and code are accurate as per the source text.",
+            "validation_status": "approved"
+        }
+    ],
+    "medications": [
+        {
+            "route": "Oral",
+            "dosage": "5 mg",
+            "reason": "",
+            "status": "current",
+            "duration": "",
+            "frequency": "Daily",
+            "brand_name": "",
+            "page_number": "2",
+            "source_text": "amLODIPine 5 mg oral tablet, 5 mg= 1 tab(s), Oral, Daily",
+            "generic_name": "amlodipine",
+            "instructions": "",
+            "validation_notes": "Dosage and frequency are correctly extracted.",
+            "validation_status": "approved"
+        },
+        {
+            "route": "Oral",
+            "dosage": "875 mg-125 mg",
+            "reason": "",
+            "status": "current",
+            "duration": "X 7 days",
+            "frequency": "Every 12 hrs",
+            "brand_name": "",
+            "page_number": "2",
+            "source_text": "amoxicillin-clavulanate 875 mg-125 mg oral tablet, 1 tab(s), Oral, Every 12 hrs",
+            "generic_name": "amoxicillin-clavulanate",
+            "instructions": "",
+            "validation_notes": "Dosage and duration are correctly extracted.",
+            "validation_status": "approved"
+        },
+        {
+            "route": "Oral",
+            "dosage": "0.5 mg",
+            "reason": "",
+            "status": "current",
+            "duration": "",
+            "frequency": "Daily",
+            "brand_name": "Avodart",
+            "page_number": "2",
+            "source_text": "Avodart 0.5 mg oral capsule, 0.5 mg= 1 cap(s), Oral, Daily",
+            "generic_name": "avodart",
+            "instructions": "",
+            "validation_notes": "All details match the source text.",
+            "validation_status": "approved"
+        },
+        {
+            "route": "Oral",
+            "dosage": "3 mg",
+            "reason": "",
+            "status": "current",
+            "duration": "",
+            "frequency": "Every morning",
+            "brand_name": "",
+            "page_number": "2",
+            "source_text": "budesonide 3 mg oral delayed release capsule, 3 mg= 1 cap(s), Oral, Every morning",
+            "generic_name": "budesonide",
+            "instructions": "",
+            "validation_notes": "Details are consistent with source text.",
+            "validation_status": "approved"
+        },
+        {
+            "route": "Oral",
+            "dosage": "0.5 mg-0.4 mg",
+            "reason": "",
+            "status": "current",
+            "duration": "",
+            "frequency": "Daily",
+            "brand_name": "",
+            "page_number": "2",
+            "source_text": "dutasteride-tamsulosin 0.5 mg-0.4 mg oral capsule, 1 cap(s), Oral, Daily",
+            "generic_name": "dutasteride-tamsulosin",
+            "instructions": "",
+            "validation_notes": "Combination dosage is correct.",
+            "validation_status": "approved"
+        },
+        {
+            "route": "Oral",
+            "dosage": "0.4 mg",
+            "reason": "",
+            "status": "current",
+            "duration": "",
+            "frequency": "Daily",
+            "brand_name": "Flomax",
+            "page_number": "2",
+            "source_text": "Flomax 0.4 mg oral capsule, 0.4 mg= 1 cap(s), Oral, Daily",
+            "generic_name": "Flomax",
+            "instructions": "",
+            "validation_notes": "Details match the source text.",
+            "validation_status": "approved"
+        },
+        {
+            "route": "Oral",
+            "dosage": "50 mg",
+            "reason": "",
+            "status": "current",
+            "duration": "",
+            "frequency": "Daily at bedtime",
+            "brand_name": "",
+            "page_number": "2",
+            "source_text": "lacosamide 50 mg oral tablet, 50 mg= 1 tab(s), Oral, Daily at bedtime",
+            "generic_name": "lacosamide",
+            "instructions": "",
+            "validation_notes": "Time of administration is correctly specified.",
+            "validation_status": "approved"
+        },
+        {
+            "route": "Oral",
+            "dosage": "17 g",
+            "reason": "",
+            "status": "current",
+            "duration": "",
+            "frequency": "Daily",
+            "brand_name": "MiraLax",
+            "page_number": "2",
+            "source_text": "MiraLax, 17 g= 1 packets, Oral, Daily",
+            "generic_name": "MiraLax",
+            "instructions": "",
+            "validation_notes": "Dosage form is a packet, accurately captured.",
+            "validation_status": "approved"
+        },
+        {
+            "route": "Oral",
+            "dosage": "4 mg",
+            "reason": "",
+            "status": "current",
+            "duration": "",
+            "frequency": "Every 8 hrs, PRN",
+            "brand_name": "",
+            "page_number": "2",
+            "source_text": "ondansetron 4 mg oral tablet, disintegrating, 4 mg= 1 tab(s), Oral, Every 8 hrs, PRN",
+            "generic_name": "ondansetron",
+            "instructions": "",
+            "validation_notes": "PRN frequency is correctly noted.",
+            "validation_status": "approved"
+        },
+        {
+            "route": "Oral",
+            "dosage": "5 mg",
+            "reason": "",
+            "status": "current",
+            "duration": "",
+            "frequency": "Daily, PRN",
+            "brand_name": "",
+            "page_number": "2",
+            "source_text": "predniSONE 5 mg oral tablet, 5 mg= 1 tab(s), Oral, Daily, PRN",
+            "generic_name": "predniSONE",
+            "instructions": "",
+            "validation_notes": "PRN status verified.",
+            "validation_status": "approved"
+        }
+    ]
+}
