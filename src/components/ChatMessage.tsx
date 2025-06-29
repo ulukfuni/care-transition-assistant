@@ -2,7 +2,8 @@
 
 import React from "react";
 import { ChatMessage as ChatMessageType } from "@/types";
-import InsightCard from "./InsightCard";
+import GroupedInsightCard from "./GroupedInsightCard";
+import { groupInsightsByPatient } from "@/utils/insightGrouping";
 
 interface ChatMessageProps {
   message: ChatMessageType;
@@ -18,6 +19,9 @@ const ChatMessage: React.FC<ChatMessageProps> = ({
     hour: "2-digit",
     minute: "2-digit",
   });
+
+  // Group insights by patient if they exist
+  const groupedInsights = message.insights ? groupInsightsByPatient(message.insights) : [];
 
   return (
     <div className={`flex ${isUser ? "justify-end" : "justify-start"} mb-4`}>
@@ -35,13 +39,13 @@ const ChatMessage: React.FC<ChatMessageProps> = ({
       </div>
 
       <div className={`max-w-3xl ${isUser ? "order-1" : "order-2"}`}>
-        {/* Insight cards for assistant messages (show above message) */}
-        {!isUser && message.insights && message.insights.length > 0 && (
+        {/* Grouped insight cards for assistant messages (show above message) */}
+        {!isUser && groupedInsights.length > 0 && (
           <div className="space-y-3 mb-3">
-            {message.insights.map((insight, index) => (
-              <InsightCard
-                key={`${message.id}-insight-${index}`}
-                insight={insight}
+            {groupedInsights.map((groupedInsight, index) => (
+              <GroupedInsightCard
+                key={`${message.id}-grouped-insight-${index}`}
+                groupedInsight={groupedInsight}
                 onAction={onInsightAction}
               />
             ))}

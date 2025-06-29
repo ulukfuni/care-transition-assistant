@@ -3,6 +3,7 @@ import OpenAI from "openai";
 import { DischargeSummary } from "@/types";
 import { mockInsightsResponse } from "@/utils/mockData";
 import { GeminiClient } from "@/utils/geminiClient";
+import { getRelevantPatients } from "@/utils/patientFilter";
 
 // Import the transformed data from the discharges API
 async function getPatientData(): Promise<DischargeSummary[]> {
@@ -41,14 +42,21 @@ export async function POST(request: NextRequest) {
       apiKey: process.env.OPENAI_API_KEY,
     });
 
-    // Get relevant patient data
+    // Get all patient data
     const allPatients = await getPatientData();
-    relevantPatients = allPatients;
+    
+    // Filter patients based on user message and any specific patient IDs
     if (patientIds && patientIds.length > 0) {
+      // If specific patient IDs are provided, use those
       relevantPatients = allPatients.filter((patient) =>
         patientIds.includes(patient.id)
       );
+    } else {
+      // Otherwise, use intelligent filtering based on the user message
+      relevantPatients = getRelevantPatients(allPatients, message);
     }
+
+    console.log(`Filtered ${allPatients.length} total patients down to ${relevantPatients.length} relevant patients for query: "${message}"`);
 
     // Create system prompt for healthcare insights
     const systemPrompt = `You are an expert healthcare AI assistant specializing in care transition management. Your role is to analyze patient discharge summaries and provide actionable insights for healthcare providers.
@@ -68,6 +76,8 @@ When analyzing patient data, consider:
 - Discharge disposition appropriateness
 
 Always provide specific, actionable recommendations with clear reasoning. Format your response as structured insights that can be displayed as cards.
+
+IMPORTANT: You are analyzing ${relevantPatients.length} patient(s) that were specifically selected based on the user's query. Focus your analysis on these patients and their specific needs.
 
 Patient Data Context:
 ${JSON.stringify(relevantPatients, null, 2)}`;

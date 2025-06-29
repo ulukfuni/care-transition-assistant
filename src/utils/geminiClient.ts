@@ -1,5 +1,6 @@
 import { GoogleGenerativeAI, GenerativeModel } from "@google/generative-ai";
 import { DischargeSummary } from "@/types";
+import { getRelevantPatients } from "./patientFilter";
 
 export interface GeminiResponse {
   insights: Array<{
@@ -41,9 +42,14 @@ export class GeminiClient {
 
   async generateInsights(
     message: string,
-    patientData: DischargeSummary[]
+    allPatientData: DischargeSummary[]
   ): Promise<GeminiResponse> {
     try {
+      // Filter patients based on the user message
+      const relevantPatients = getRelevantPatients(allPatientData, message);
+      
+      console.log(`Gemini: Filtered ${allPatientData.length} total patients down to ${relevantPatients.length} relevant patients for query: "${message}"`);
+
       const systemPrompt = `You are an expert healthcare AI assistant specializing in care transition management. Your role is to analyze patient discharge summaries and provide actionable insights for healthcare providers.
 
 Key responsibilities:
@@ -62,8 +68,10 @@ When analyzing patient data, consider:
 
 Always provide specific, actionable recommendations with clear reasoning. Format your response as structured insights that can be displayed as cards.
 
+IMPORTANT: You are analyzing ${relevantPatients.length} patient(s) that were specifically selected based on the user's query. Focus your analysis on these patients and their specific needs.
+
 Patient Data Context:
-${JSON.stringify(patientData, null, 2)}`;
+${JSON.stringify(relevantPatients, null, 2)}`;
 
       const userPrompt = `${message}
 

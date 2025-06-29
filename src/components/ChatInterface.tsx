@@ -140,7 +140,7 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({
                     ></div>
                   </div>
                   <span className="text-sm text-gray-600">
-                    Analyzing patient data...
+                    Filtering and analyzing relevant patient data...
                   </span>
                 </div>
               </div>

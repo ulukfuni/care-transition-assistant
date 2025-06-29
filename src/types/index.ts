@@ -111,6 +111,18 @@ export interface ChatResponse {
   summary: string;
 }
 
+export interface GroupedInsight {
+  patient: string;
+  insights: InsightCard[];
+  priority: "high" | "medium" | "low";
+  type: "risk_alert" | "follow_up" | "medication" | "care_coordination" | "general";
+  confidence: "high" | "medium" | "low";
+  timeframe: "immediate" | "within_24h" | "within_week" | "routine";
+  title: string;
+  recommendation: string;
+  reasoning: string;
+}
+
 // API response types
 export interface ApiResponse<T> {
   success: boolean;
