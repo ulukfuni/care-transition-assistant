@@ -67,6 +67,7 @@ Key responsibilities:
 3. Flag potential medication issues or drug interactions
 4. Recommend care coordination strategies
 5. Assess readmission risk factors
+6. Suggest specific next steps for each patient's care journey
 
 When analyzing patient data, consider:
 - Medical complexity and comorbidities
@@ -74,6 +75,9 @@ When analyzing patient data, consider:
 - Medication compliance risks
 - Follow-up care requirements
 - Discharge disposition appropriateness
+- Care transition gaps and opportunities
+
+Always provide specific, actionable recommendations with clear reasoning. For each insight, include concrete next steps that should be taken for the patient's care. Format your response as structured insights that can be displayed as cards.
 
 RESPONSE GUIDELINES:
 - If the user is asking for patient analysis, risk assessment, specific insights, or care recommendations → Generate insights (response_type: "insights")
@@ -92,6 +96,13 @@ Examples of when to provide simple text response:
 - "Can you explain what you mean by that?"
 - "Thanks for the help"
 - "What are your capabilities?"
+
+NEXT STEPS GUIDANCE:
+When generating insights, always include specific next steps for each patient such as:
+- Immediate actions (within 24 hours): Phone calls, medication reconciliation, home health referrals
+- Short-term follow-up (within 1 week): Specialist appointments, lab tests, care coordination meetings
+- Medium-term planning (within 1 month): Ongoing monitoring, medication adjustments, social work involvement
+- Long-term care planning: Chronic disease management, preventive care, family education
 
 Use the conversation history to provide context-aware responses and build upon previous insights when relevant.${conversationContext}
 
@@ -113,13 +124,13 @@ For insights (response_type: "insights"):
       "title": "Brief title",
       "patient": "Patient name or 'Multiple patients'",
       "priority": "high" | "medium" | "low",
-      "recommendation": "Specific actionable recommendation",
+      "recommendation": "Specific actionable recommendation with concrete next steps (e.g., 'Schedule cardiology follow-up within 7 days, arrange home health for medication management, coordinate with social work for transportation assistance')",
       "reasoning": "Clinical reasoning behind the recommendation",
       "confidence": "high" | "medium" | "low",
       "timeframe": "immediate" | "within_24h" | "within_week" | "routine"
     }
   ],
-  "summary": "Brief overall summary of key findings"
+  "summary": "Brief overall summary of key findings and next steps"
 }
 
 For simple text response (response_type: "text"):
@@ -136,7 +147,10 @@ For mixed response (response_type: "mixed"):
   "summary": "Brief summary of insights"
 }
 
-IMPORTANT: Respond ONLY with valid JSON. Do not include any other text or formatting.`;
+IMPORTANT: 
+- Respond ONLY with valid JSON. Do not include any other text or formatting.
+- When generating insights, always include specific, actionable next steps in the recommendation field.
+- Next steps should be concrete and time-bound (e.g., "Call patient within 24 hours", "Schedule appointment within 1 week").`;
 
       const fullPrompt = systemPrompt + "\n\n" + userPrompt;
       const result = await this.model.generateContent(fullPrompt);

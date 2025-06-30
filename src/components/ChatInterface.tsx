@@ -56,6 +56,7 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({
     "Analyze all patients for readmission risk",
     "Which patients need immediate follow-up?",
     "How does this system work?",
+    "What are the next steps for each patient?",
     "Review medication compliance risks",
     "What are your capabilities?",
     "Show patients with complex discharge needs",
@@ -160,7 +161,7 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({
               value={inputMessage}
               onChange={(e) => setInputMessage(e.target.value)}
               onKeyDown={handleKeyDown}
-              placeholder="Ask about patient care transitions, risk factors, or follow-up needs..."
+              placeholder="Ask about patient care transitions, risk factors, next steps, or follow-up needs..."
               className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none min-h-[44px] max-h-32 text-gray-900 placeholder-gray-600"
               disabled={isLoading}
               rows={1}
