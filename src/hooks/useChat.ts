@@ -39,6 +39,7 @@ export const useChat = () => {
           message: content,
           patientIds,
           context,
+          chatHistory: messages,
         }),
       });
 
@@ -56,9 +57,11 @@ export const useChat = () => {
       const assistantMessage: ChatMessage = {
         id: uuidv4(),
         role: 'assistant',
-        content: data.data.summary || 'Analysis complete. Please see the insights below.',
+        content: data.data.response_type === 'text' 
+          ? data.data.content || 'Response received.'
+          : data.data.summary || 'Analysis complete. Please see the insights below.',
         timestamp: new Date(),
-        insights: data.data.insights,
+        insights: data.data.insights || [],
       };
 
       setMessages(prev => [...prev, assistantMessage]);
@@ -80,7 +83,7 @@ export const useChat = () => {
     } finally {
       setIsLoading(false);
     }
-  }, []);
+  }, [messages]);
 
   const clearMessages = useCallback(() => {
     setMessages([]);

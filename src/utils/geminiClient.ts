@@ -1,9 +1,11 @@
 import { GoogleGenerativeAI, GenerativeModel } from "@google/generative-ai";
-import { DischargeSummary } from "@/types";
+import { DischargeSummary, ChatMessage } from "@/types";
 import { getRelevantPatients } from "./patientFilter";
 
 export interface GeminiResponse {
-  insights: Array<{
+  response_type: "insights" | "text" | "mixed";
+  content?: string; // Simple text response when no insights needed
+  insights?: Array<{
     type: "risk_alert" | "follow_up" | "medication" | "care_coordination" | "general";
     title: string;
     patient: string;
@@ -13,7 +15,7 @@ export interface GeminiResponse {
     confidence: "high" | "medium" | "low";
     timeframe: "immediate" | "within_24h" | "within_week" | "routine";
   }>;
-  summary: string;
+  summary?: string; // Only present when insights are generated
 }
 
 function extractJsonFromMarkdown(text: string): string {
@@ -42,13 +44,20 @@ export class GeminiClient {
 
   async generateInsights(
     message: string,
-    allPatientData: DischargeSummary[]
+    allPatientData: DischargeSummary[],
+    chatHistory: ChatMessage[] = []
   ): Promise<GeminiResponse> {
     try {
       // Filter patients based on the user message
       const relevantPatients = getRelevantPatients(allPatientData, message);
       
       console.log(`Gemini: Filtered ${allPatientData.length} total patients down to ${relevantPatients.length} relevant patients for query: "${message}"`);
+
+      // Get the last 10 messages for context
+      const recentMessages = chatHistory.slice(-10);
+      const conversationContext = recentMessages.length > 0 
+        ? `\n\nConversation History (Last ${recentMessages.length} messages):\n${recentMessages.map(msg => `${msg.role}: ${msg.content}`).join('\n')}`
+        : '';
 
       const systemPrompt = `You are an expert healthcare AI assistant specializing in care transition management. Your role is to analyze patient discharge summaries and provide actionable insights for healthcare providers.
 
@@ -66,7 +75,25 @@ When analyzing patient data, consider:
 - Follow-up care requirements
 - Discharge disposition appropriateness
 
-Always provide specific, actionable recommendations with clear reasoning. Format your response as structured insights that can be displayed as cards.
+RESPONSE GUIDELINES:
+- If the user is asking for patient analysis, risk assessment, specific insights, or care recommendations → Generate insights (response_type: "insights")
+- If the user is asking general questions, clarifications, or making statements → Provide simple text response (response_type: "text")
+- If the user is asking follow-up questions about previous insights → Reference previous insights in text response (response_type: "text")
+- If the user is asking for both analysis and general information → Provide both (response_type: "mixed")
+
+Examples of when to generate insights:
+- "Analyze readmission risk for all patients"
+- "Show me medication issues"
+- "Which patients need immediate follow-up?"
+- "Identify care coordination opportunities"
+
+Examples of when to provide simple text response:
+- "How does this system work?"
+- "Can you explain what you mean by that?"
+- "Thanks for the help"
+- "What are your capabilities?"
+
+Use the conversation history to provide context-aware responses and build upon previous insights when relevant.${conversationContext}
 
 IMPORTANT: You are analyzing ${relevantPatients.length} patient(s) that were specifically selected based on the user's query. Focus your analysis on these patients and their specific needs.
 
@@ -75,8 +102,11 @@ ${JSON.stringify(relevantPatients, null, 2)}`;
 
       const userPrompt = `${message}
 
-Please analyze the provided patient data and generate actionable insights. Structure your response as JSON with the following format:
+Please analyze the user's request and respond appropriately. Structure your response as JSON with one of the following formats:
+
+For insights (response_type: "insights"):
 {
+  "response_type": "insights",
   "insights": [
     {
       "type": "risk_alert" | "follow_up" | "medication" | "care_coordination" | "general",
@@ -90,6 +120,20 @@ Please analyze the provided patient data and generate actionable insights. Struc
     }
   ],
   "summary": "Brief overall summary of key findings"
+}
+
+For simple text response (response_type: "text"):
+{
+  "response_type": "text",
+  "content": "Your helpful response to the user's question or statement"
+}
+
+For mixed response (response_type: "mixed"):
+{
+  "response_type": "mixed",
+  "content": "General response or explanation",
+  "insights": [...],
+  "summary": "Brief summary of insights"
 }
 
 IMPORTANT: Respond ONLY with valid JSON. Do not include any other text or formatting.`;

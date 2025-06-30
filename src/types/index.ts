@@ -107,8 +107,10 @@ export interface InsightCard {
 }
 
 export interface ChatResponse {
-  insights: InsightCard[];
-  summary: string;
+  response_type: "insights" | "text" | "mixed";
+  content?: string; // Simple text response when no insights needed
+  insights?: InsightCard[];
+  summary?: string; // Only present when insights are generated
 }
 
 export interface GroupedInsight {
@@ -142,6 +144,7 @@ export interface ChatRequest {
   message: string;
   patientIds?: number[];
   context?: string;
+  chatHistory?: ChatMessage[];
 }
 
 // Filter types for discharge summaries

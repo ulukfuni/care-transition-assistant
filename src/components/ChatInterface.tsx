@@ -55,8 +55,9 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({
   const suggestedQuestions = [
     "Analyze all patients for readmission risk",
     "Which patients need immediate follow-up?",
+    "How does this system work?",
     "Review medication compliance risks",
-    "Identify care coordination opportunities",
+    "What are your capabilities?",
     "Show patients with complex discharge needs",
   ];
 

@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import OpenAI from "openai";
-import { DischargeSummary } from "@/types";
+import { DischargeSummary, ChatMessage } from "@/types";
 import { mockInsightsResponse } from "@/utils/mockData";
 import { GeminiClient } from "@/utils/geminiClient";
 import { getRelevantPatients } from "@/utils/patientFilter";
@@ -21,10 +21,12 @@ async function getPatientData(): Promise<DischargeSummary[]> {
 export async function POST(request: NextRequest) {
   let message = "";
   let relevantPatients: DischargeSummary[] = [];
+  let chatHistory: ChatMessage[] = [];
   
   try {
-    const { message: requestMessage, patientIds } = await request.json();
+    const { message: requestMessage, patientIds, chatHistory: requestChatHistory } = await request.json();
     message = requestMessage;
+    chatHistory = requestChatHistory || [];
 
     if (!process.env.OPENAI_API_KEY) {
       return NextResponse.json(
@@ -121,22 +123,21 @@ Please analyze the provided patient data and generate actionable insights. Struc
     let parsedResponse;
     try {
       parsedResponse = JSON.parse(responseContent);
+      
+      // Ensure the response has the correct format
+      if (!parsedResponse.response_type) {
+        // Legacy format - convert to new format
+        parsedResponse = {
+          response_type: "insights",
+          insights: parsedResponse.insights || [],
+          summary: parsedResponse.summary || "Analysis completed"
+        };
+      }
     } catch {
       // If JSON parsing fails, create a fallback response
       parsedResponse = {
-        insights: [
-          {
-            type: "general",
-            title: "Analysis Complete",
-            patient: "Multiple patients",
-            priority: "medium",
-            recommendation: responseContent,
-            reasoning: "AI analysis of patient data",
-            confidence: "medium",
-            timeframe: "routine",
-          },
-        ],
-        summary: "Analysis completed successfully",
+        response_type: "text",
+        content: responseContent || "I apologize, but I couldn't process your request properly. Please try again."
       };
     }
 
@@ -159,9 +160,9 @@ Please analyze the provided patient data and generate actionable insights. Struc
       console.log("OpenAI API quota exceeded - trying Gemini as fallback");
       
       try {
-        // Try Gemini API
+        // Try Gemini API with chat history
         const geminiClient = new GeminiClient();
-        const geminiResponse = await geminiClient.generateInsights(message, relevantPatients);
+        const geminiResponse = await geminiClient.generateInsights(message, relevantPatients, chatHistory);
         
         return NextResponse.json({
           success: true,
