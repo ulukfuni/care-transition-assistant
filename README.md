@@ -36,10 +36,11 @@ This application analyzes patient discharge summaries and generates actionable i
    cp .env.example .env.local
    ```
 
-   Edit `.env.local` and add your OpenAI API key:
+   Edit `.env.local` and add your OpenAI or Gemini API key:
 
    ```
    OPENAI_API_KEY=your_openai_api_key_here
+   GEMINI_API_KEY=your_gemini_api_key_here
    ```
 
 4. **Run the development server**
@@ -54,6 +55,7 @@ This application analyzes patient discharge summaries and generates actionable i
 
 
 ### Prompt Design explanation
+
 - The first part describes the role that the LLM will be taking. In this case, it's an expert healthcare AI assistant.
 - The next part highlights the LLM's responsibilities, keeping the LLM on track to be a helpful healthcare assistant.
 - The next part sets up some guidelines for the LLM response in order to give the response some structure. We also provide examples so there's basically some guardrails for the LLM.
@@ -64,7 +66,7 @@ This application analyzes patient discharge summaries and generates actionable i
 
 
 ### Challenges and Trade-offs
-// todo
+
 - First challenge is finding a way to fit patient information into the prompt
 There can be N number of patients in a real world setting and fitting that into one prompt would be insane. An imprefect solution that was implemented here is to filter out patient data based on the query/user message. Another idea that can be done is to send a prompt that interprets the query/user message and returns back a json response that can be used to filter/sort/query our patient data and then sends back the real prompt to be used to the LLM. Something possibly similar to reasoning in more powerful LLMs.
 Another solution is for the user to select a subset of patients that they want to analyze from before talking to the LLM. That way we can narrow down the amount of patient data is being put into the prompt.
@@ -81,7 +83,7 @@ To make the AI assistant feel more natural and have an actual conversation, it w
 
 - **Frontend**: Next.js 15, React, TypeScript, Tailwind CSS
 - **Backend**: Next.js API Routes
-- **AI Integration**: OpenAI GPT-4 API
+- **AI Integration**: OpenAI GPT-3.5 turbo, Gemini 1.5 flash
 - **Data**: Static JSON (mock patient data)
 
 ### Project Structure
@@ -90,7 +92,7 @@ To make the AI assistant feel more natural and have an actual conversation, it w
 src/
 ├── app/
 │   ├── api/
-│   │   ├── chat/          # LLM integration endpoint
+│   │   ├── chat/          # LLM integration endpoint (OpenAI + Gemini)
 │   │   └── discharges/    # Patient data endpoint
 │   ├── globals.css
 │   ├── layout.tsx
@@ -98,48 +100,23 @@ src/
 ├── components/
 │   ├── ChatInterface.tsx  # Main chat component
 │   ├── ChatMessage.tsx    # Individual message display
+│   ├── GroupedInsightCard.tsx # Grouped insight display
 │   ├── InsightCard.tsx    # AI insight display
 │   ├── LoadingSpinner.tsx # Loading states
 │   └── PatientSelector.tsx # Patient selection UI
 ├── data/
-│   └── discharge-summaries.json # Mock patient data
+│   ├── pt-1.json         # Patient 1 data
+│   ├── pt-2.json         # Patient 2 data
+│   └── pt-3.json         # Patient 3 data
 ├── hooks/
 │   ├── useChat.ts         # Chat functionality
 │   └── usePatients.ts     # Patient data management
 ├── types/
 │   └── index.ts           # TypeScript definitions
 └── utils/
-    └── promptEngineering.ts # AI prompt templates
+    ├── geminiClient.ts    # Gemini AI integration
+    ├── insightGrouping.ts # Insight grouping utilities
+    ├── mockData.ts        # Mock data for fallback
+    ├── patientFilter.ts   # Patient filtering logic
+    └── promptEngineering.ts # Shared AI prompt templates
 ```
-
-
-
-## 🔒 Security Considerations
-
-### API Key Management
-
-- Store OpenAI API keys securely using environment variables
-- Never commit API keys to version control
-- Use different keys for development and production
-
-### Data Privacy
-
-- Patient data is currently mock/synthetic
-- Implement proper data encryption for real patient data
-- Follow HIPAA compliance guidelines for healthcare applications
-- Consider data anonymization for AI processing
-
-### Rate Limiting
-
-- Implement rate limiting for API endpoints
-- Monitor OpenAI API usage and costs
-- Set up alerts for unusual usage patterns
-
-
-### Performance Optimization
-
-- Implement response caching for repeated queries
-- Add request debouncing for chat input
-- Optimize bundle size with dynamic imports
-- Consider implementing streaming responses
-
