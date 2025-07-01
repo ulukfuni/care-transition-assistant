@@ -1,7 +1,12 @@
 'use client';
 
 import React from 'react';
-import { InsightCard as InsightCardType, PRIORITY_COLORS, INSIGHT_TYPE_COLORS, TIMEFRAME_URGENCY } from '@/types';
+import {
+  InsightCard as InsightCardType,
+  PRIORITY_COLORS,
+  INSIGHT_TYPE_COLORS,
+  TIMEFRAME_URGENCY,
+} from '@/types';
 
 interface InsightCardProps {
   insight: InsightCardType;
@@ -42,7 +47,9 @@ const InsightCard: React.FC<InsightCardProps> = ({ insight, onAction }) => {
   };
 
   return (
-    <div className={`rounded-lg border-2 p-4 mb-4 ${typeClass} transition-all duration-200 hover:shadow-md`}>
+    <div
+      className={`rounded-lg border-2 p-4 mb-4 ${typeClass} transition-all duration-200 hover:shadow-md`}
+    >
       {/* Header */}
       <div className="flex items-start justify-between mb-3">
         <div className="flex items-center space-x-2">
@@ -83,7 +90,7 @@ const InsightCard: React.FC<InsightCardProps> = ({ insight, onAction }) => {
             {insight.confidence.toUpperCase()}
           </span>
         </div>
-        
+
         {onAction && (
           <div className="flex space-x-2">
             <button

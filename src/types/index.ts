@@ -84,30 +84,25 @@ export interface RawPatientData {
 // Chat and insight types
 export interface ChatMessage {
   id: string;
-  role: "user" | "assistant";
+  role: 'user' | 'assistant';
   content: string;
   timestamp: Date;
   insights?: InsightCard[];
 }
 
 export interface InsightCard {
-  type:
-    | "risk_alert"
-    | "follow_up"
-    | "medication"
-    | "care_coordination"
-    | "general";
+  type: 'risk_alert' | 'follow_up' | 'medication' | 'care_coordination' | 'general';
   title: string;
   patient: string;
-  priority: "high" | "medium" | "low";
+  priority: 'high' | 'medium' | 'low';
   recommendation: string;
   reasoning: string;
-  confidence: "high" | "medium" | "low";
-  timeframe: "immediate" | "within_24h" | "within_week" | "routine";
+  confidence: 'high' | 'medium' | 'low';
+  timeframe: 'immediate' | 'within_24h' | 'within_week' | 'routine';
 }
 
 export interface ChatResponse {
-  response_type: "insights" | "text" | "mixed";
+  response_type: 'insights' | 'text' | 'mixed';
   content?: string; // Simple text response when no insights needed
   insights?: InsightCard[];
   summary?: string; // Only present when insights are generated
@@ -116,10 +111,10 @@ export interface ChatResponse {
 export interface GroupedInsight {
   patient: string;
   insights: InsightCard[];
-  priority: "high" | "medium" | "low";
-  type: "risk_alert" | "follow_up" | "medication" | "care_coordination" | "general";
-  confidence: "high" | "medium" | "low";
-  timeframe: "immediate" | "within_24h" | "within_week" | "routine";
+  priority: 'high' | 'medium' | 'low';
+  type: 'risk_alert' | 'follow_up' | 'medication' | 'care_coordination' | 'general';
+  confidence: 'high' | 'medium' | 'low';
+  timeframe: 'immediate' | 'within_24h' | 'within_week' | 'routine';
   title: string;
   recommendation: string;
   reasoning: string;
@@ -151,7 +146,7 @@ export interface ChatRequest {
 export interface DischargeFilters {
   patientId?: string;
   diagnosis?: string;
-  riskLevel?: "high" | "medium" | "low";
+  riskLevel?: 'high' | 'medium' | 'low';
 }
 
 // Component prop types
@@ -174,22 +169,22 @@ export interface PatientSelectorProps {
 
 // Priority and risk level mappings
 export const PRIORITY_COLORS = {
-  high: "bg-red-100 text-red-800 border-red-200",
-  medium: "bg-yellow-100 text-yellow-800 border-yellow-200",
-  low: "bg-green-100 text-green-800 border-green-200",
+  high: 'bg-red-100 text-red-800 border-red-200',
+  medium: 'bg-yellow-100 text-yellow-800 border-yellow-200',
+  low: 'bg-green-100 text-green-800 border-green-200',
 } as const;
 
 export const INSIGHT_TYPE_COLORS = {
-  risk_alert: "bg-red-50 border-red-200",
-  follow_up: "bg-blue-50 border-blue-200",
-  medication: "bg-purple-50 border-purple-200",
-  care_coordination: "bg-orange-50 border-orange-200",
-  general: "bg-gray-50 border-gray-200",
+  risk_alert: 'bg-red-50 border-red-200',
+  follow_up: 'bg-blue-50 border-blue-200',
+  medication: 'bg-purple-50 border-purple-200',
+  care_coordination: 'bg-orange-50 border-orange-200',
+  general: 'bg-gray-50 border-gray-200',
 } as const;
 
 export const TIMEFRAME_URGENCY = {
-  immediate: "Immediate",
-  within_24h: "Within 24 hours",
-  within_week: "Within 1 week",
-  routine: "Routine",
+  immediate: 'Immediate',
+  within_24h: 'Within 24 hours',
+  within_week: 'Within 1 week',
+  routine: 'Routine',
 } as const;

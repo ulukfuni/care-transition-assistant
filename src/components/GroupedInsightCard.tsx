@@ -10,7 +10,7 @@ interface GroupedInsightCardProps {
 
 const GroupedInsightCard: React.FC<GroupedInsightCardProps> = ({ groupedInsight, onAction }) => {
   const [isExpanded, setIsExpanded] = useState(false);
-  
+
   const priorityClass = PRIORITY_COLORS[groupedInsight.priority];
   const typeClass = INSIGHT_TYPE_COLORS[groupedInsight.type];
   const timeframeText = TIMEFRAME_URGENCY[groupedInsight.timeframe];
@@ -46,7 +46,9 @@ const GroupedInsightCard: React.FC<GroupedInsightCardProps> = ({ groupedInsight,
   const hasMultipleInsights = groupedInsight.insights.length > 1;
 
   return (
-    <div className={`rounded-lg border-2 p-4 mb-4 ${typeClass} transition-all duration-200 hover:shadow-md`}>
+    <div
+      className={`rounded-lg border-2 p-4 mb-4 ${typeClass} transition-all duration-200 hover:shadow-md`}
+    >
       {/* Header */}
       <div className="flex items-start justify-between mb-3">
         <div className="flex items-center space-x-2">
@@ -84,11 +86,15 @@ const GroupedInsightCard: React.FC<GroupedInsightCardProps> = ({ groupedInsight,
                   <div key={index} className="pl-4 border-l-2 border-gray-200">
                     <div className="flex items-center space-x-2 mb-1">
                       <span className="text-xs font-medium text-gray-600">{insight.title}</span>
-                      <span className={`px-1 py-0.5 rounded text-xs ${PRIORITY_COLORS[insight.priority]}`}>
+                      <span
+                        className={`px-1 py-0.5 rounded text-xs ${PRIORITY_COLORS[insight.priority]}`}
+                      >
                         {insight.priority}
                       </span>
                     </div>
-                    <p className="text-sm text-gray-900 leading-relaxed">{insight.recommendation}</p>
+                    <p className="text-sm text-gray-900 leading-relaxed">
+                      {insight.recommendation}
+                    </p>
                     <p className="text-xs text-gray-600 mt-1">{insight.reasoning}</p>
                   </div>
                 ))}
@@ -97,7 +103,10 @@ const GroupedInsightCard: React.FC<GroupedInsightCardProps> = ({ groupedInsight,
               // Show collapsed view with summary
               <div>
                 <p className="text-sm text-gray-900 leading-relaxed">
-                  {groupedInsight.insights.slice(0, 2).map(insight => insight.recommendation).join('. ')}
+                  {groupedInsight.insights
+                    .slice(0, 2)
+                    .map(insight => insight.recommendation)
+                    .join('. ')}
                   {groupedInsight.insights.length > 2 && '...'}
                 </p>
                 <button
@@ -131,7 +140,7 @@ const GroupedInsightCard: React.FC<GroupedInsightCardProps> = ({ groupedInsight,
             {groupedInsight.confidence.toUpperCase()}
           </span>
         </div>
-        
+
         <div className="flex space-x-2">
           {isExpanded && hasMultipleInsights && (
             <button
@@ -141,7 +150,7 @@ const GroupedInsightCard: React.FC<GroupedInsightCardProps> = ({ groupedInsight,
               Collapse
             </button>
           )}
-          
+
           {onAction && (
             <>
               <button
@@ -164,4 +173,4 @@ const GroupedInsightCard: React.FC<GroupedInsightCardProps> = ({ groupedInsight,
   );
 };
 
-export default GroupedInsightCard; 
+export default GroupedInsightCard;

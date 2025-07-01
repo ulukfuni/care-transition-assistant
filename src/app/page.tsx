@@ -1,19 +1,14 @@
-"use client";
+'use client';
 
-import React from "react";
-import { useChat } from "@/hooks/useChat";
-import { usePatients } from "@/hooks/usePatients";
-import ChatInterface from "@/components/ChatInterface";
-import PatientSelector from "@/components/PatientSelector";
-import LoadingSpinner from "@/components/LoadingSpinner";
+import React from 'react';
+import { useChat } from '@/hooks/useChat';
+import { usePatients } from '@/hooks/usePatients';
+import ChatInterface from '@/components/ChatInterface';
+import PatientSelector from '@/components/PatientSelector';
+import LoadingSpinner from '@/components/LoadingSpinner';
 
 export default function Home() {
-  const {
-    messages,
-    isLoading: chatLoading,
-    error: chatError,
-    sendMessage,
-  } = useChat();
+  const { messages, isLoading: chatLoading, error: chatError, sendMessage } = useChat();
 
   const {
     patients,
@@ -54,9 +49,7 @@ export default function Home() {
               />
             </svg>
           </div>
-          <h2 className="text-xl font-semibold text-gray-900 mb-2">
-            Error Loading Data
-          </h2>
+          <h2 className="text-xl font-semibold text-gray-900 mb-2">Error Loading Data</h2>
           <p className="text-gray-600 mb-4">{patientsError}</p>
           <button
             onClick={() => window.location.reload()}
@@ -92,9 +85,7 @@ export default function Home() {
                 </svg>
               </div>
               <div>
-                <h1 className="text-xl font-semibold text-gray-900">
-                  Care Transition Assistant
-                </h1>
+                <h1 className="text-xl font-semibold text-gray-900">Care Transition Assistant</h1>
                 <p className="text-sm text-gray-500">
                   AI-powered insights for healthcare transitions
                 </p>
@@ -103,12 +94,10 @@ export default function Home() {
 
             <div className="flex items-center space-x-4">
               <div className="text-sm text-gray-600">
-                <span className="font-medium">{patients.length}</span> patients
-                loaded
+                <span className="font-medium">{patients.length}</span> patients loaded
               </div>
               <div className="text-sm text-gray-600">
-                <span className="font-medium">{selectedPatients.length}</span>{" "}
-                selected
+                <span className="font-medium">{selectedPatients.length}</span> selected
               </div>
             </div>
           </div>
@@ -133,19 +122,19 @@ export default function Home() {
                 <div className="flex justify-between text-sm">
                   <span className="text-gray-600">High Risk:</span>
                   <span className="font-medium text-red-600">
-                    {patients.filter((p) => p.risk_factors.length >= 3).length}
+                    {patients.filter(p => p.risk_factors.length >= 3).length}
                   </span>
                 </div>
                 <div className="flex justify-between text-sm">
                   <span className="text-gray-600">Medium Risk:</span>
                   <span className="font-medium text-yellow-600">
-                    {patients.filter((p) => p.risk_factors.length === 2).length}
+                    {patients.filter(p => p.risk_factors.length === 2).length}
                   </span>
                 </div>
                 <div className="flex justify-between text-sm">
                   <span className="text-gray-600">Low Risk:</span>
                   <span className="font-medium text-green-600">
-                    {patients.filter((p) => p.risk_factors.length <= 1).length}
+                    {patients.filter(p => p.risk_factors.length <= 1).length}
                   </span>
                 </div>
               </div>
@@ -169,12 +158,7 @@ export default function Home() {
       {chatError && (
         <div className="fixed bottom-4 right-4 bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded-lg shadow-lg">
           <div className="flex items-center">
-            <svg
-              className="w-5 h-5 mr-2"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
+            <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"

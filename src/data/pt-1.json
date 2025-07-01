@@ -1,218 +1,218 @@
 {
-    "disclaimers": {},
-    "case_summary": {
-        "disposition": "Discharged home with follow-up with primary care physician",
-        "demographics": "81-year-old male with history of dementia",
-        "presentation": "presented to HCA Florida JFK Hospital with staple removal after laceration",
-        "exam_findings": "Notable for left occipital scalp laceration with 7 staples in place",
-        "interventions": "Treated with staple removal",
-        "key_diagnostics": "No laboratory tests were mentioned in the document.",
-        "composite_summary": "81-year-old male with history of dementia presented to HCA Florida JFK Hospital with staple removal after laceration. Notable for left occipital scalp laceration with 7 staples in place. No laboratory tests were mentioned in the document.. Diagnosed with encounter for removal of sutures. Treated with staple removal. Discharged home with follow-up with primary care physician.",
-        "primary_diagnoses": "Diagnosed with encounter for removal of sutures"
-    },
-    "encounter": {
-        "mrn": "1346385",
-        "notes": "",
-        "is_deceased": false,
-        "deceased_date": "",
-        "discharged_to": "Home / Self-Care",
-        "facility_name": "HCA Florida JFK Hospital",
-        "provider_name": "Feliciano, Angel MD",
-        "admission_date": "2025-03-26",
-        "discharge_date": "2025-03-26",
-        "encounter_type": "emergency",
-        "reason_for_visit": "Staple removal",
-        "validation_notes": "All checks passed",
-        "discharge_summary": "The patient was discharged to home after staple removal. The patient's condition was stable and appropriate for discharge from the emergency department. Follow-up instructions were provided, and the patient was advised to return if symptoms worsen."
-    },
-    "lab_tests": [
+  "disclaimers": {},
+  "case_summary": {
+    "disposition": "Discharged home with follow-up with primary care physician",
+    "demographics": "81-year-old male with history of dementia",
+    "presentation": "presented to HCA Florida JFK Hospital with staple removal after laceration",
+    "exam_findings": "Notable for left occipital scalp laceration with 7 staples in place",
+    "interventions": "Treated with staple removal",
+    "key_diagnostics": "No laboratory tests were mentioned in the document.",
+    "composite_summary": "81-year-old male with history of dementia presented to HCA Florida JFK Hospital with staple removal after laceration. Notable for left occipital scalp laceration with 7 staples in place. No laboratory tests were mentioned in the document.. Diagnosed with encounter for removal of sutures. Treated with staple removal. Discharged home with follow-up with primary care physician.",
+    "primary_diagnoses": "Diagnosed with encounter for removal of sutures"
+  },
+  "encounter": {
+    "mrn": "1346385",
+    "notes": "",
+    "is_deceased": false,
+    "deceased_date": "",
+    "discharged_to": "Home / Self-Care",
+    "facility_name": "HCA Florida JFK Hospital",
+    "provider_name": "Feliciano, Angel MD",
+    "admission_date": "2025-03-26",
+    "discharge_date": "2025-03-26",
+    "encounter_type": "emergency",
+    "reason_for_visit": "Staple removal",
+    "validation_notes": "All checks passed",
+    "discharge_summary": "The patient was discharged to home after staple removal. The patient's condition was stable and appropriate for discharge from the emergency department. Follow-up instructions were provided, and the patient was advised to return if symptoms worsen."
+  },
+  "lab_tests": [
+    {
+      "note": "No laboratory tests were mentioned in the document.",
+      "status": "",
+      "test_name": "",
+      "page_number": "",
+      "source_text": "",
+      "facility_name": "",
+      "date_completed": ""
+    }
+  ],
+  "follow_ups": [
+    {
+      "date": "",
+      "timeframe": "",
+      "page_number": "4",
+      "source_text": "The patient will pursue further outpatient evaluation with the primary care physician or other designated or consulting physician as outlined in the discharge instructions.",
+      "follow_up_item": "Outpatient evaluation with the primary care physician or other designated or consulting physician",
+      "additional_info": "The patient will pursue further outpatient evaluation with the primary care physician or other designated or consulting physician as outlined in the discharge instructions."
+    }
+  ],
+  "patient": {
+    "age": 81,
+    "sex": "male",
+    "ssn": "",
+    "last_name": "Smith",
+    "first_name": "John",
+    "middle_name": "",
+    "date_of_birth": "1943-11-23",
+    "validation_notes": "All checks passed"
+  },
+  "discharge_diagnoses": [
+    {
+      "note": "Patient presented for staple removal following a laceration.",
+      "description": "Encounter for removal of sutures",
+      "icd_10_code": "Z48.02",
+      "page_number": "4",
+      "source_text": "Primary Impression: Visit for suture removal",
+      "discharge_status": "discharge",
+      "validation_notes": "All checks passed",
+      "discharge_status_explanation": "The patient was discharged after the removal of staples, indicating the condition was resolved and stable for discharge.",
+      "icd_10_code_official_description": "Encounter for removal of sutures"
+    }
+  ],
+  "lace_score": {
+    "risk_level": "moderate",
+    "explanation": "The LACE score was calculated based on the following factors: Length of Stay (L): 1, Acute Admission (A): 3, Comorbidities (C): 5, Emergency Visits (E): 0.",
+    "total_score": 9,
+    "admission_type": "emergency",
+    "ed_visits_count": 0,
+    "acuity_lace_score": 3,
+    "length_of_stay_days": 1,
+    "ed_visits_lace_score": 0,
+    "length_of_stay_lace_score": 1,
+    "charlson_comorbidity_index": {
+      "age": {
+        "value": 81,
+        "age_points": 4,
+        "page_number": 1,
+        "source_text": "Age: 81Y"
+      },
+      "comorbidities": [
         {
-            "note": "No laboratory tests were mentioned in the document.",
-            "status": "",
-            "test_name": "",
-            "page_number": "",
-            "source_text": "",
-            "facility_name": "",
-            "date_completed": ""
+          "status": "confirmed",
+          "cci_points": 1,
+          "cci_mapping": "Dementia",
+          "description": "Dementia",
+          "page_number": 3,
+          "source_text": "Reports: Dementia.",
+          "cci_mapping_explanation": "The report explicitly states 'Reports: Dementia.' which confirms the presence of dementia, a condition included in the Charlson Comorbidity Index."
         }
-    ],
-    "follow_ups": [
-        {
-            "date": "",
-            "timeframe": "",
-            "page_number": "4",
-            "source_text": "The patient will pursue further outpatient evaluation with the primary care physician or other designated or consulting physician as outlined in the discharge instructions.",
-            "follow_up_item": "Outpatient evaluation with the primary care physician or other designated or consulting physician",
-            "additional_info": "The patient will pursue further outpatient evaluation with the primary care physician or other designated or consulting physician as outlined in the discharge instructions."
-        }
-    ],
-    "patient": {
-        "age": 81,
-        "sex": "male",
-        "ssn": "",
-        "last_name": "Smith",
-        "first_name": "John",
-        "middle_name": "",
-        "date_of_birth": "1943-11-23",
-        "validation_notes": "All checks passed"
+      ]
     },
-    "discharge_diagnoses": [
-        {
-            "note": "Patient presented for staple removal following a laceration.",
-            "description": "Encounter for removal of sutures",
-            "icd_10_code": "Z48.02",
-            "page_number": "4",
-            "source_text": "Primary Impression: Visit for suture removal",
-            "discharge_status": "discharge",
-            "validation_notes": "All checks passed",
-            "discharge_status_explanation": "The patient was discharged after the removal of staples, indicating the condition was resolved and stable for discharge.",
-            "icd_10_code_official_description": "Encounter for removal of sutures"
-        }
-    ],
-    "lace_score": {
-        "risk_level": "moderate",
-        "explanation": "The LACE score was calculated based on the following factors: Length of Stay (L): 1, Acute Admission (A): 3, Comorbidities (C): 5, Emergency Visits (E): 0.",
-        "total_score": 9,
-        "admission_type": "emergency",
-        "ed_visits_count": 0,
-        "acuity_lace_score": 3,
-        "length_of_stay_days": 1,
-        "ed_visits_lace_score": 0,
-        "length_of_stay_lace_score": 1,
-        "charlson_comorbidity_index": {
-            "age": {
-                "value": 81,
-                "age_points": 4,
-                "page_number": 1,
-                "source_text": "Age: 81Y"
-            },
-            "comorbidities": [
-                {
-                    "status": "confirmed",
-                    "cci_points": 1,
-                    "cci_mapping": "Dementia",
-                    "description": "Dementia",
-                    "page_number": 3,
-                    "source_text": "Reports: Dementia.",
-                    "cci_mapping_explanation": "The report explicitly states 'Reports: Dementia.' which confirms the presence of dementia, a condition included in the Charlson Comorbidity Index."
-                }
-            ]
-        },
-        "charlson_comorbidity_index_score": 5,
-        "charlson_comorbidity_index_lace_score": 5
+    "charlson_comorbidity_index_score": 5,
+    "charlson_comorbidity_index_lace_score": 5
+  },
+  "medications": [
+    {
+      "route": "PO",
+      "dosage": "5 MG",
+      "reason": "",
+      "duration": "",
+      "frequency": "DAILY",
+      "brand_name": "ARICEPT",
+      "page_number": "3",
+      "source_text": "DONEPEZIL (ARICEPT) 5 MG PO DAILY",
+      "generic_name": "DONEPEZIL",
+      "instructions": "",
+      "medication_status": "discharge",
+      "administration_status": "current"
     },
-    "medications": [
-        {
-            "route": "PO",
-            "dosage": "5 MG",
-            "reason": "",
-            "duration": "",
-            "frequency": "DAILY",
-            "brand_name": "ARICEPT",
-            "page_number": "3",
-            "source_text": "DONEPEZIL (ARICEPT) 5 MG PO DAILY",
-            "generic_name": "DONEPEZIL",
-            "instructions": "",
-            "medication_status": "discharge",
-            "administration_status": "current"
-        },
-        {
-            "route": "PO",
-            "dosage": "100 MG",
-            "reason": "",
-            "duration": "",
-            "frequency": "DAILY",
-            "brand_name": "VITAMIN B-1",
-            "page_number": "3",
-            "source_text": "THIAMINE (VITAMIN B-1) 100 MG PO DAILY",
-            "generic_name": "THIAMINE",
-            "instructions": "",
-            "medication_status": "discharge",
-            "administration_status": "current"
-        },
-        {
-            "route": "PO",
-            "dosage": "1 MG",
-            "reason": "",
-            "duration": "",
-            "frequency": "DAILY",
-            "brand_name": "",
-            "page_number": "3",
-            "source_text": "Folic Acid 1 MG PO DAILY",
-            "generic_name": "Folic Acid",
-            "instructions": "",
-            "medication_status": "discharge",
-            "administration_status": "current"
-        },
-        {
-            "route": "PO",
-            "dosage": "150 MG",
-            "reason": "",
-            "duration": "",
-            "frequency": "BEDTIME",
-            "brand_name": "",
-            "page_number": "3",
-            "source_text": "traZODone HCl 150 MG PO BEDTIME",
-            "generic_name": "traZODone HCl",
-            "instructions": "",
-            "medication_status": "discharge",
-            "administration_status": "current"
-        },
-        {
-            "route": "PO",
-            "dosage": "100 MG",
-            "reason": "",
-            "duration": "",
-            "frequency": "DAILY",
-            "brand_name": "ZOLOFT",
-            "page_number": "3",
-            "source_text": "SERTRALINE (ZOLOFT) 100 MG PO DAILY",
-            "generic_name": "SERTRALINE",
-            "instructions": "",
-            "medication_status": "discharge",
-            "administration_status": "current"
-        },
-        {
-            "route": "PO",
-            "dosage": "0.5 MG",
-            "reason": "ANXIETY",
-            "duration": "",
-            "frequency": "BID PRN",
-            "brand_name": "ATIVAN",
-            "page_number": "3",
-            "source_text": "LORazepam (ATIVAN) 0.5 MG PO BID PRN ANXIETY",
-            "generic_name": "LORazepam",
-            "instructions": "",
-            "medication_status": "discharge",
-            "administration_status": "current"
-        },
-        {
-            "route": "PO",
-            "dosage": "2 MG",
-            "reason": "",
-            "duration": "",
-            "frequency": "BEDTIME",
-            "brand_name": "Abilify",
-            "page_number": "3",
-            "source_text": "ARIPiprazole (Abilify) 2 MG PO BEDTIME",
-            "generic_name": "ARIPiprazole",
-            "instructions": "",
-            "medication_status": "discharge",
-            "administration_status": "current"
-        },
-        {
-            "route": "PO",
-            "dosage": "20 MG",
-            "reason": "",
-            "duration": "",
-            "frequency": "DAILY",
-            "brand_name": "PROTONIX",
-            "page_number": "3",
-            "source_text": "PANTOPRAZOLE (PROTONIX) 20 MG PO DAILY",
-            "generic_name": "PANTOPRAZOLE",
-            "instructions": "",
-            "medication_status": "discharge",
-            "administration_status": "current"
-        }
-    ]
+    {
+      "route": "PO",
+      "dosage": "100 MG",
+      "reason": "",
+      "duration": "",
+      "frequency": "DAILY",
+      "brand_name": "VITAMIN B-1",
+      "page_number": "3",
+      "source_text": "THIAMINE (VITAMIN B-1) 100 MG PO DAILY",
+      "generic_name": "THIAMINE",
+      "instructions": "",
+      "medication_status": "discharge",
+      "administration_status": "current"
+    },
+    {
+      "route": "PO",
+      "dosage": "1 MG",
+      "reason": "",
+      "duration": "",
+      "frequency": "DAILY",
+      "brand_name": "",
+      "page_number": "3",
+      "source_text": "Folic Acid 1 MG PO DAILY",
+      "generic_name": "Folic Acid",
+      "instructions": "",
+      "medication_status": "discharge",
+      "administration_status": "current"
+    },
+    {
+      "route": "PO",
+      "dosage": "150 MG",
+      "reason": "",
+      "duration": "",
+      "frequency": "BEDTIME",
+      "brand_name": "",
+      "page_number": "3",
+      "source_text": "traZODone HCl 150 MG PO BEDTIME",
+      "generic_name": "traZODone HCl",
+      "instructions": "",
+      "medication_status": "discharge",
+      "administration_status": "current"
+    },
+    {
+      "route": "PO",
+      "dosage": "100 MG",
+      "reason": "",
+      "duration": "",
+      "frequency": "DAILY",
+      "brand_name": "ZOLOFT",
+      "page_number": "3",
+      "source_text": "SERTRALINE (ZOLOFT) 100 MG PO DAILY",
+      "generic_name": "SERTRALINE",
+      "instructions": "",
+      "medication_status": "discharge",
+      "administration_status": "current"
+    },
+    {
+      "route": "PO",
+      "dosage": "0.5 MG",
+      "reason": "ANXIETY",
+      "duration": "",
+      "frequency": "BID PRN",
+      "brand_name": "ATIVAN",
+      "page_number": "3",
+      "source_text": "LORazepam (ATIVAN) 0.5 MG PO BID PRN ANXIETY",
+      "generic_name": "LORazepam",
+      "instructions": "",
+      "medication_status": "discharge",
+      "administration_status": "current"
+    },
+    {
+      "route": "PO",
+      "dosage": "2 MG",
+      "reason": "",
+      "duration": "",
+      "frequency": "BEDTIME",
+      "brand_name": "Abilify",
+      "page_number": "3",
+      "source_text": "ARIPiprazole (Abilify) 2 MG PO BEDTIME",
+      "generic_name": "ARIPiprazole",
+      "instructions": "",
+      "medication_status": "discharge",
+      "administration_status": "current"
+    },
+    {
+      "route": "PO",
+      "dosage": "20 MG",
+      "reason": "",
+      "duration": "",
+      "frequency": "DAILY",
+      "brand_name": "PROTONIX",
+      "page_number": "3",
+      "source_text": "PANTOPRAZOLE (PROTONIX) 20 MG PO DAILY",
+      "generic_name": "PANTOPRAZOLE",
+      "instructions": "",
+      "medication_status": "discharge",
+      "administration_status": "current"
+    }
+  ]
 }

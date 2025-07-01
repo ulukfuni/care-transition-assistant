@@ -1,4 +1,4 @@
-import { DischargeSummary, ChatMessage } from "@/types";
+import { DischargeSummary, ChatMessage } from '@/types';
 
 export interface PromptContext {
   relevantPatients: DischargeSummary[];
@@ -8,12 +8,13 @@ export interface PromptContext {
 
 export function buildSystemPrompt(context: PromptContext): string {
   const { relevantPatients, chatHistory } = context;
-  
+
   // Get the last 10 messages for context
   const recentMessages = chatHistory.slice(-10);
-  const conversationContext = recentMessages.length > 0 
-    ? `\n\nConversation History (Last ${recentMessages.length} messages):\n${recentMessages.map(msg => `${msg.role}: ${msg.content}`).join('\n')}`
-    : '';
+  const conversationContext =
+    recentMessages.length > 0
+      ? `\n\nConversation History (Last ${recentMessages.length} messages):\n${recentMessages.map(msg => `${msg.role}: ${msg.content}`).join('\n')}`
+      : '';
 
   return `You are an expert healthcare AI assistant specializing in care transition management. Your role is to analyze patient discharge summaries and provide actionable insights for healthcare providers.
 
@@ -70,7 +71,7 @@ ${JSON.stringify(relevantPatients, null, 2)}`;
 
 export function buildUserPrompt(context: PromptContext): string {
   const { message } = context;
-  
+
   return `${message}
 
 Please analyze the user's request and respond appropriately. Structure your response as JSON with one of the following formats:
@@ -116,7 +117,5 @@ IMPORTANT:
 export function buildFullPrompt(context: PromptContext): string {
   const systemPrompt = buildSystemPrompt(context);
   const userPrompt = buildUserPrompt(context);
-  return systemPrompt + "\n\n" + userPrompt;
+  return systemPrompt + '\n\n' + userPrompt;
 }
-
-

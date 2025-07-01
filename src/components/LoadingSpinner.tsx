@@ -8,21 +8,17 @@ interface LoadingSpinnerProps {
   className?: string;
 }
 
-const LoadingSpinner: React.FC<LoadingSpinnerProps> = ({ 
-  size = 'md', 
-  text,
-  className = '' 
-}) => {
+const LoadingSpinner: React.FC<LoadingSpinnerProps> = ({ size = 'md', text, className = '' }) => {
   const sizeClasses = {
     sm: 'w-4 h-4',
     md: 'w-6 h-6',
-    lg: 'w-8 h-8'
+    lg: 'w-8 h-8',
   };
 
   const textSizeClasses = {
     sm: 'text-sm',
     md: 'text-base',
-    lg: 'text-lg'
+    lg: 'text-lg',
   };
 
   return (
@@ -50,11 +46,7 @@ const LoadingSpinner: React.FC<LoadingSpinnerProps> = ({
             />
           </svg>
         </div>
-        {text && (
-          <span className={`text-gray-600 ${textSizeClasses[size]}`}>
-            {text}
-          </span>
-        )}
+        {text && <span className={`text-gray-600 ${textSizeClasses[size]}`}>{text}</span>}
       </div>
     </div>
   );
